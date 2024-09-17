@@ -1,0 +1,43 @@
+{% extends "myapp/index.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="container justify-content-center mt-4">
+    <div class="card my_class" style="max-width: 500px; margin: auto;">
+        <div class="card-header" >
+            <h1>home html</h1>
+        </div>
+        <div class="card-body">
+            <ol>
+            {% for item in dados %}
+                <li>{{ item.nome }}</li>
+            {% endfor %}
+            
+            
+            </ol>
+            
+            {% if ultimo_nome %}
+                <p>O ultimo usuário é: {{ ultimo_nome }}</p>
+            {% endif %}
+
+            
+            <form action="/" method="post">
+                {% csrf_token %}
+                <input class="form-control" type="text" name="nome" placeholder="Nome">
+            <form action="/" method="post">
+                {% csrf_token %}
+                <input class="form-control" type="int" name="idade" placeholder="Idade">
+                <input class="btn btn-success" type="submit" value="enviar">
+            </form>
+
+            {% if idades >= 18 %} 
+                <p>o usuario {{ultimo_nome}} de idade {{idades}} é maior de idade</p>
+            {%else%}
+                <p>o usuario {{ultimo_nome}}  de idade {{idades}} é menor de idade</p>
+            {% endif %}
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}

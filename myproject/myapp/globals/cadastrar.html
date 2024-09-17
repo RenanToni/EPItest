@@ -1,0 +1,21 @@
+{% extends "myapp/index.html" %}
+
+{% block title %}produtos{% endblock title %}
+
+
+{% block content %}
+<div class="container justify-content-center mt-4">
+    <div class="card-body">
+        <div class="card my_class" style="max-width: 500px; margin: auto;">
+            <form method="post">
+                {% csrf_token %}
+                <input class="form-control" type="str" name="nome" placeholder="Nome Colaborador">
+                <input class="form-control" type="str" name="cpf" placeholder="CPF">
+                <input class="form-control" type="str" name="cargo" placeholder="Cargo">
+                <input class="form-control" type="str" name="telefone" placeholder="Telefone">
+                <input class="btn btn-success" type="submit" value="enviar">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
