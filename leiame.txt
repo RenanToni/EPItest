@@ -1,0 +1,4 @@
+Fiz algumas alteraçẽos. minha dica é que na tela de mostrar os colaboradores ter um botão para cadastrar colaborador
+
+
+Não se esqueça de executar os comandos python manage.py makemigrations e python manage.py migrate para criar as tabelas.
