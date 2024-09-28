@@ -19,8 +19,15 @@ from myapp import views
 
 urlpatterns = [
     path('', views.frente),
-    path('cadastrar/', views.cadastrar),
-    path('atualizar/', views.atualizar),
-    path('colaboradores/', views.colaboradores),
-    
+    path('cadastrarEPI/', views.cadastrarEPI),
+    path('atualizarEPI/<int:id>', views.atualizarEPI),
+    path('cadastrarColaborador/', views.cadastrarColaborador),
+    path('atualizarColaborador/<int:id>', views.atualizarColaborador),
+    path('registrar/', views.registrar),
+    path('relatoriosEPI/', views.relatorioEPI),
+    path('relatoriosColaboradores/', views.relatorioColaborador),
+    path('colaboradorAtualizar', views.colaboradorAtualizar),
+    path('EPIatualizar', views.EPIatualizar),
+    path('deletarEPI/<int:id>', views.deletarEPI),
+    path('deletarColaborador/<int:id>', views.deletarColaborador),
 ]
