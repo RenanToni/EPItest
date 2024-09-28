@@ -1,3 +1,55 @@
 {% extends "myapp/index.html" %}
 
 {% block title %}Listar Colaboradores{% endblock title %}
+
+{% block content %}
+<class container justify-content-center mt-4>
+    <div class="card my_class" style="max-width: 500px; margin: auto;">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <label for="Colaborador">Equipamento</label>
+                <input class="form-control" type="str" name="equipamento" placeholder="Equipamento">
+                <label for="Colaborador">Colaborador</label>
+                <div class="form-group">
+                    <select class="form-control" name="colaborador">
+                        {% for colaborador in colaboradores %}
+                        <option value="{{ colaborador }}">{{ colaborador }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <label for="data_emprestimo">Data_emprestimo</label>
+                <input class="form-control" type="date" name="data_emprestimo" placeholder="Data Emprestimo">
+                <label for="data_prevista">Data prevista devolução</label>
+                <input class="form-control" type="date" name="data_prevista" placeholder="Data Prevista Devolução">
+                <label for="status">Status</label>
+                <div class="form-group">
+                    <select class="form-control" name="status">    
+                        <option value="emprestado" selected>Emprestado</option>
+                        <option value="em uso">Em uso</option>
+                        <option value="fornecido">fornecido</option>
+                        <option value="devolvido">devolvido</option>
+                        <option value="danificado">danificado</option>
+                        <option value="perdido">perdido</option>
+                    </select>
+                </div>
+                <label for="condicoes_equipamento">Condições do equipamento no empréstimo</label>
+                <div class="form-group">
+                    <select class="form-control" name="condicoes_equipamento">    
+                        <option value="novo" selected>Novo</option>
+                        <option value="usado">Usado</option>
+                        <option value="perdido">perdido</option>
+                    </select>
+                </div>
+                <label for="data_devolucao">Data devolução</label>
+                <input class="form-control" type="date" name="data_devolucao" placeholder="Data Devolução">
+                <label for="observação">Observação na devolução/perda</label>
+                <input class="form-control" type="str" name="observacao" placeholder="Observação na devolução/perda">
+
+
+                <input class="btn btn-success" type="submit" value="enviar">
+            </form>
+        </div>
+    </div>
+</class>
+{%endblock content %}

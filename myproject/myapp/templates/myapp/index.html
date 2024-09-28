@@ -9,13 +9,14 @@
 </head>
 <body>
 
+    
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="img_avatar1.png" alt="Logo" style="width:40px;" class="rounded-pill">
     </a>
-    <a class="navbar-brand" href="/">Equipamento</a>
-    <div class="hidden-buttons">
+    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Equipamento</button>
+    <div id="demo" class="collapse">
         <a href="/cadastrarEPI">
             <button class="btn btn-primary" >Cadastrar Equipamento</button>
         </a>
@@ -23,8 +24,9 @@
             <button class="btn btn-primary" >Editar Equipamento</button>
         </a>   
     </div>
-    <a class="navbar-brand" href="/">Controle EPI</a>
-    <div class="hidden-buttons">
+        
+    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Controle EPI</button>
+    <div id="demo" class="collapse">
         <a href="/registrar">
             <button class="btn btn-primary" >Registrar Ação</button>
         </a>
@@ -32,7 +34,8 @@
             <button class="btn btn-primary" >Relatórios</button>
         </a>
     </div>
-    <a class="navbar-brand" href="/">Colaborador</a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Colaborador</button>
+    <div id="demo" class="collapse">
     <div class="hidden-buttons">
         <a href="/cadastrarColaborador">
             <button class="btn btn-primary" >Cadastrar Colaborador</button>
