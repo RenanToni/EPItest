@@ -79,9 +79,10 @@ def cadastrarEPI(request):
 
 def registrar(request):
     colaboradores = Colaborador.objects.all()
+    epis = EPIgenerico.objects.all()
     if request.method == 'POST':
-        equipamento = EPIgenerico.objects.get(id=request.POST.get('equipamento'))
-        colaborador = Colaborador.objects.get(id=request.POST.get('colaborador'))
+        equipamento = EPIgenerico.objects.get(nome=request.POST.get('equipamento'))
+        colaborador = Colaborador.objects.get(nome=request.POST.get('colaborador'))
         data_emprestimo = request.POST.get('data_emprestimo')
         data_prevista = request.POST.get('data_prevista')
         status = request.POST.get('status')
@@ -104,7 +105,7 @@ def registrar(request):
                 motivo_devolução= observacao,
             )
             return redirect('/')
-    return render(request, 'myapp/globals/registrar.html', {"colaboradores":colaboradores})
+    return render(request, 'myapp/globals/registrar.html', {"colaboradores":colaboradores}, {"epis":epis})
 
 def relatorioEPI(request):
     coladores = Colaborador.objects.all()
